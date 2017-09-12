@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8af940818daf4ac48811cfacf94f7565" Name="Diagram1">
+        <EntityTypeShape EntityType="drugsroreModel.CLIENT" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.INSTOCK" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.OUTSTOCK" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.ROLES" Width="1.5" PointX="5.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.SELL" Width="1.5" PointX="2.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.STAFF" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.STOCK" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="drugsroreModel.SUPPLIER" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="drugsroreModel.FK__OUTSTOCK__FK_CLI__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="drugsroreModel.FK__INSTOCK__FK_DRUG__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="drugsroreModel.FK__INSTOCK__FK_STAF__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="drugsroreModel.FK__INSTOCK__FK_SUPP__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="drugsroreModel.FK__OUTSTOCK__FK_STA__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="drugsroreModel.FK__OUTSTOCK__OUTSTO__1CF15040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

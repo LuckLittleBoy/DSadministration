@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\model.dll.config
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\model.dll
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\model.pdb
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\DSadministration\model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Desktop\DSadministration\model\obj\Debug\model.dll
+C:\Users\Administrator\Desktop\DSadministration\model\obj\Debug\model.pdb

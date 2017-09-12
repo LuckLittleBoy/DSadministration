@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="drugsroreModelStoreContainer" CdmEntityContainer="drugsroreEntities">
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="drugsroreModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ADRESS" ColumnName="CLIENT_ADRESS" />
+          <ScalarProperty Name="CLIENT_CONTACTER" ColumnName="CLIENT_CONTACTER" />
+          <ScalarProperty Name="CLIENT_TEL" ColumnName="CLIENT_TEL" />
+          <ScalarProperty Name="CLIENT_REMARKS" ColumnName="CLIENT_REMARKS" />
+          <ScalarProperty Name="CLIENT_OTHERS" ColumnName="CLIENT_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSTOCK">
+      <EntityTypeMapping TypeName="drugsroreModel.INSTOCK">
+        <MappingFragment StoreEntitySet="INSTOCK">
+          <ScalarProperty Name="INSTOCK_ID" ColumnName="INSTOCK_ID" />
+          <ScalarProperty Name="FK_DRUG_ID" ColumnName="FK_DRUG_ID" />
+          <ScalarProperty Name="INSTOCK_DATE" ColumnName="INSTOCK_DATE" />
+          <ScalarProperty Name="INSTOCK_PROOF_ID" ColumnName="INSTOCK_PROOF_ID" />
+          <ScalarProperty Name="INSTOCK_NUM" ColumnName="INSTOCK_NUM" />
+          <ScalarProperty Name="FK_SUPPLIER_ID" ColumnName="FK_SUPPLIER_ID" />
+          <ScalarProperty Name="INSTOCK_LOTBUY_PRICE" ColumnName="INSTOCK_LOTBUY_PRICE" />
+          <ScalarProperty Name="FK_STAFF_ID" ColumnName="FK_STAFF_ID" />
+          <ScalarProperty Name="INSTOCK_REMARKS" ColumnName="INSTOCK_REMARKS" />
+          <ScalarProperty Name="INSTOCK_OTHERS" ColumnName="INSTOCK_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OUTSTOCK">
+      <EntityTypeMapping TypeName="drugsroreModel.OUTSTOCK">
+        <MappingFragment StoreEntitySet="OUTSTOCK">
+          <ScalarProperty Name="OUTSTOCK_ID" ColumnName="OUTSTOCK_ID" />
+          <ScalarProperty Name="FK_DRUG_ID" ColumnName="FK_DRUG_ID" />
+          <ScalarProperty Name="OUTSTOCK_DATE" ColumnName="OUTSTOCK_DATE" />
+          <ScalarProperty Name="OUTSTOCK_SELLPRICE" ColumnName="OUTSTOCK_SELLPRICE" />
+          <ScalarProperty Name="FK_CLIENT_ID" ColumnName="FK_CLIENT_ID" />
+          <ScalarProperty Name="FK_STAFF_ID" ColumnName="FK_STAFF_ID" />
+          <ScalarProperty Name="OUTSTOCK_REMARKS" ColumnName="OUTSTOCK_REMARKS" />
+          <ScalarProperty Name="OUTSTOCK_OTHERS" ColumnName="OUTSTOCK_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES">
+      <EntityTypeMapping TypeName="drugsroreModel.ROLES">
+        <MappingFragment StoreEntitySet="ROLES">
+          <ScalarProperty Name="ROLES_ID" ColumnName="ROLES_ID" />
+          <ScalarProperty Name="ROLES_NAME" ColumnName="ROLES_NAME" />
+          <ScalarProperty Name="ROLES_POWER" ColumnName="ROLES_POWER" />
+          <ScalarProperty Name="ROLES_OTHERS" ColumnName="ROLES_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SELL">
+      <EntityTypeMapping TypeName="drugsroreModel.SELL">
+        <MappingFragment StoreEntitySet="SELL">
+          <ScalarProperty Name="SELL_ID" ColumnName="SELL_ID" />
+          <ScalarProperty Name="SELL_PROOF_ID" ColumnName="SELL_PROOF_ID" />
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="DRUG_MOLECULES" ColumnName="DRUG_MOLECULES" />
+          <ScalarProperty Name="SELL_NUM" ColumnName="SELL_NUM" />
+          <ScalarProperty Name="SELL_SINGLE_PRICE" ColumnName="SELL_SINGLE_PRICE" />
+          <ScalarProperty Name="SELL_SUM_PRICE" ColumnName="SELL_SUM_PRICE" />
+          <ScalarProperty Name="SELL_REMARKS" ColumnName="SELL_REMARKS" />
+          <ScalarProperty Name="SELL_OTHERS" ColumnName="SELL_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAFF">
+      <EntityTypeMapping TypeName="drugsroreModel.STAFF">
+        <MappingFragment StoreEntitySet="STAFF">
+          <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+          <ScalarProperty Name="STAFF_NAME" ColumnName="STAFF_NAME" />
+          <ScalarProperty Name="STAFF_USERNAME" ColumnName="STAFF_USERNAME" />
+          <ScalarProperty Name="STAFF_PASSWORD" ColumnName="STAFF_PASSWORD" />
+          <ScalarProperty Name="STAFF_IDCARDNUM" ColumnName="STAFF_IDCARDNUM" />
+          <ScalarProperty Name="STAFF_ADRESS" ColumnName="STAFF_ADRESS" />
+          <ScalarProperty Name="STAFF_CONTACTER" ColumnName="STAFF_CONTACTER" />
+          <ScalarProperty Name="STAFF_POSITION" ColumnName="STAFF_POSITION" />
+          <ScalarProperty Name="STAFF_POWER" ColumnName="STAFF_POWER" />
+          <ScalarProperty Name="STAFF_REMARKS" ColumnName="STAFF_REMARKS" />
+          <ScalarProperty Name="STAFF_OTHERS" ColumnName="STAFF_OTHERS" />
+          <ScalarProperty Name="STAFF_TEL" ColumnName="STAFF_TEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK">
+      <EntityTypeMapping TypeName="drugsroreModel.STOCK">
+        <MappingFragment StoreEntitySet="STOCK">
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="DRUG_NAME" ColumnName="DRUG_NAME" />
+          <ScalarProperty Name="DRUG_DOSAGE" ColumnName="DRUG_DOSAGE" />
+          <ScalarProperty Name="DRUG_PROADRESS" ColumnName="DRUG_PROADRESS" />
+          <ScalarProperty Name="DRUG_PACK_NUM" ColumnName="DRUG_PACK_NUM" />
+          <ScalarProperty Name="DRUG_STOCK_NUM" ColumnName="DRUG_STOCK_NUM" />
+          <ScalarProperty Name="DRUG_MOLECULES" ColumnName="DRUG_MOLECULES" />
+          <ScalarProperty Name="DRUG_EFFECTIVE_DATE" ColumnName="DRUG_EFFECTIVE_DATE" />
+          <ScalarProperty Name="DRUG_LOT_NUM" ColumnName="DRUG_LOT_NUM" />
+          <ScalarProperty Name="DRUG_CATEGORY" ColumnName="DRUG_CATEGORY" />
+          <ScalarProperty Name="DRUG_SELL_PRICE" ColumnName="DRUG_SELL_PRICE" />
+          <ScalarProperty Name="DRUG_LOTSELL_PRICE" ColumnName="DRUG_LOTSELL_PRICE" />
+          <ScalarProperty Name="DRUG_REMARKS" ColumnName="DRUG_REMARKS" />
+          <ScalarProperty Name="DRUG_OTHERS" ColumnName="DRUG_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUPPLIER">
+      <EntityTypeMapping TypeName="drugsroreModel.SUPPLIER">
+        <MappingFragment StoreEntitySet="SUPPLIER">
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+          <ScalarProperty Name="SUPPLIER_ADRESS" ColumnName="SUPPLIER_ADRESS" />
+          <ScalarProperty Name="SUPPLIER_CONTACTER" ColumnName="SUPPLIER_CONTACTER" />
+          <ScalarProperty Name="SUPPLIER_TEL" ColumnName="SUPPLIER_TEL" />
+          <ScalarProperty Name="SUPPLIER_REMARKS" ColumnName="SUPPLIER_REMARKS" />
+          <ScalarProperty Name="SUPPLIER_OTHERS" ColumnName="SUPPLIER_OTHERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

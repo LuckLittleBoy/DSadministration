@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{847014A5-2DB2-4A56-9253-C316AF123284}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CSkin 16.1.14.2\CSkin 4.0\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=12.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=12.9.0.0, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Microsoft Visual Studio2013 12.0\Common7\IDE\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\Microsoft Visual Studio2013 12.0\Common7\IDE\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin4">
+      <HintPath>..\..\..\IrisSkin\Bin\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="btnGoodsInBook1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="btnGoodsInBook1.Designer.cs">
+      <DependentUpon>btnGoodsInBook1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundsManagement.Designer.cs">
+      <DependentUpon>FundsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENT.cs" />
+    <Compile Include="Models\drugsroreContext.cs" />
+    <Compile Include="Models\INSTOCK.cs" />
+    <Compile Include="Models\INSTOCK_MONEY.cs" />
+    <Compile Include="Models\Mapping\CLIENTMap.cs" />
+    <Compile Include="Models\Mapping\INSTOCKMap.cs" />
+    <Compile Include="Models\Mapping\INSTOCK_MONEYMap.cs" />
+    <Compile Include="Models\Mapping\MedicineMap.cs" />
+    <Compile Include="Models\Mapping\OUTSTOCKMap.cs" />
+    <Compile Include="Models\Mapping\ROLEMap.cs" />
+    <Compile Include="Models\Mapping\SELLMap.cs" />
+    <Compile Include="Models\Mapping\STAFFMap.cs" />
+    <Compile Include="Models\Mapping\STOCKMap.cs" />
+    <Compile Include="Models\Mapping\SUPPLIERMap.cs" />
+    <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\OUTSTOCK.cs" />
+    <Compile Include="Models\ROLE.cs" />
+    <Compile Include="Models\SELL.cs" />
+    <Compile Include="Models\STAFF.cs" />
+    <Compile Include="Models\STOCK.cs" />
+    <Compile Include="Models\SUPPLIER.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellGoods.Designer.cs">
+      <DependentUpon>SellGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="slStorehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="slStorehouse.Designer.cs">
+      <DependentUpon>slStorehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suggestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suggestion.Designer.cs">
+      <DependentUpon>Suggestion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="btnGoodsInBook1.resx">
+      <DependentUpon>btnGoodsInBook1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundsManagement.resx">
+      <DependentUpon>FundsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SellGoods.resx">
+      <DependentUpon>SellGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="slStorehouse.resx">
+      <DependentUpon>slStorehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suggestion.resx">
+      <DependentUpon>Suggestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Delete.ico" />
+    <None Include="bin\Debug\icon\phone_out.ico" />
+    <None Include="bin\Debug\icon\print.ico" />
+    <None Include="bin\Debug\icon\shutdown.ico" />
+    <None Include="bin\Debug\icon\setting.ico" />
+    <None Include="bin\Debug\icon\printnew.ico" />
+    <None Include="bin\Debug\icon\buy.ico" />
+    <None Include="bin\Debug\icon\cash.ico" />
+    <None Include="bin\Debug\icon\Dollar.ico" />
+    <None Include="bin\Debug\icon\sell.ico" />
+    <None Include="bin\Debug\icon\Warehouse.ico" />
+    <None Include="bin\Debug\icon\table.ico" />
+    <None Include="bin\Debug\icon\settings.ico" />
+    <None Include="bin\Debug\icon\feedback.ico" />
+    <Content Include="icon\down_arrow_128px_1205407_easyicon.net.ico" />
+    <None Include="icon\drug.jpg" />
+    <Content Include="icon\Pharmacy_72px_1120567_easyicon.net.ico" />
+    <Content Include="icon\right_arrow_128px_1205481_easyicon.net.ico" />
+    <None Include="icon\search_48px.ico" />
+    <Content Include="icon\up_arrow_128px_1205504_easyicon.net.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

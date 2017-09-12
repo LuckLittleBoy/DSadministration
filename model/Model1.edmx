@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="drugsroreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CLIENT_ADRESS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CLIENT_CONTACTER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CLIENT_TEL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CLIENT_REMARKS" Type="nvarchar" MaxLength="30" />
+          <Property Name="CLIENT_OTHERS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="INSTOCK">
+          <Key>
+            <PropertyRef Name="INSTOCK_ID" />
+          </Key>
+          <Property Name="INSTOCK_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FK_DRUG_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INSTOCK_DATE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INSTOCK_PROOF_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INSTOCK_NUM" Type="int" Nullable="false" />
+          <Property Name="FK_SUPPLIER_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INSTOCK_LOTBUY_PRICE" Type="float" Nullable="false" />
+          <Property Name="FK_STAFF_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="INSTOCK_REMARKS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="INSTOCK_OTHERS" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OUTSTOCK">
+          <Key>
+            <PropertyRef Name="OUTSTOCK_ID" />
+          </Key>
+          <Property Name="OUTSTOCK_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FK_DRUG_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OUTSTOCK_DATE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OUTSTOCK_SELLPRICE" Type="float" Nullable="false" />
+          <Property Name="FK_CLIENT_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FK_STAFF_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OUTSTOCK_REMARKS" Type="nvarchar" MaxLength="30" />
+          <Property Name="OUTSTOCK_OTHERS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="ROLES_ID" />
+          </Key>
+          <Property Name="ROLES_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ROLES_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ROLES_POWER" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ROLES_OTHERS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SELL">
+          <Key>
+            <PropertyRef Name="SELL_ID" />
+          </Key>
+          <Property Name="SELL_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SELL_PROOF_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_MOLECULES" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SELL_NUM" Type="int" Nullable="false" />
+          <Property Name="SELL_SINGLE_PRICE" Type="float" Nullable="false" />
+          <Property Name="SELL_SUM_PRICE" Type="float" Nullable="false" />
+          <Property Name="SELL_REMARKS" Type="nvarchar" MaxLength="30" />
+          <Property Name="SELL_OTHERS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="STAFF_ID" />
+          </Key>
+          <Property Name="STAFF_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_NAME" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="STAFF_USERNAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_PASSWORD" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_IDCARDNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_ADRESS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_CONTACTER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="STAFF_POSITION" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STAFF_POWER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="STAFF_REMARKS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="STAFF_OTHERS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="STAFF_TEL" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STOCK">
+          <Key>
+            <PropertyRef Name="DRUG_ID" />
+          </Key>
+          <Property Name="DRUG_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_DOSAGE" Type="float" Nullable="false" />
+          <Property Name="DRUG_PROADRESS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_PACK_NUM" Type="int" Nullable="false" />
+          <Property Name="DRUG_STOCK_NUM" Type="int" Nullable="false" />
+          <Property Name="DRUG_MOLECULES" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DRUG_EFFECTIVE_DATE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_LOT_NUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_CATEGORY" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_SELL_PRICE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_LOTSELL_PRICE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DRUG_REMARKS" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DRUG_OTHERS" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUPPLIER_ADRESS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUPPLIER_CONTACTER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SUPPLIER_TEL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUPPLIER_REMARKS" Type="nvarchar" MaxLength="30" />
+          <Property Name="SUPPLIER_OTHERS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__INSTOCK__FK_DRUG__164452B1">
+          <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STOCK">
+              <PropertyRef Name="DRUG_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_DRUG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INSTOCK__FK_STAF__182C9B23">
+          <End Role="STAFF" Type="Self.STAFF" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="STAFF_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INSTOCK__FK_SUPP__173876EA">
+          <End Role="SUPPLIER" Type="Self.SUPPLIER" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIER">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_SUPPLIER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OUTSTOCK__FK_CLI__1DE57479">
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENT">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OUTSTOCK__FK_STA__1ED998B2">
+          <End Role="STAFF" Type="Self.STAFF" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="STAFF_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OUTSTOCK__OUTSTO__1CF15040">
+          <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STOCK">
+              <PropertyRef Name="DRUG_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_DRUG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="drugsroreModelStoreContainer">
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INSTOCK" EntityType="Self.INSTOCK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OUTSTOCK" EntityType="Self.OUTSTOCK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SELL" EntityType="Self.SELL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STAFF" EntityType="Self.STAFF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STOCK" EntityType="Self.STOCK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUPPLIER" EntityType="Self.SUPPLIER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__INSTOCK__FK_DRUG__164452B1" Association="Self.FK__INSTOCK__FK_DRUG__164452B1">
+            <End Role="STOCK" EntitySet="STOCK" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INSTOCK__FK_STAF__182C9B23" Association="Self.FK__INSTOCK__FK_STAF__182C9B23">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INSTOCK__FK_SUPP__173876EA" Association="Self.FK__INSTOCK__FK_SUPP__173876EA">
+            <End Role="SUPPLIER" EntitySet="SUPPLIER" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OUTSTOCK__FK_CLI__1DE57479" Association="Self.FK__OUTSTOCK__FK_CLI__1DE57479">
+            <End Role="CLIENT" EntitySet="CLIENT" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OUTSTOCK__FK_STA__1ED998B2" Association="Self.FK__OUTSTOCK__FK_STA__1ED998B2">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OUTSTOCK__OUTSTO__1CF15040" Association="Self.FK__OUTSTOCK__OUTSTO__1CF15040">
+            <End Role="STOCK" EntitySet="STOCK" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="drugsroreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_ADRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_CONTACTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLIENT_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OUTSTOCK" Relationship="Self.FK__OUTSTOCK__FK_CLI__1DE57479" FromRole="CLIENT" ToRole="OUTSTOCK" />
+        </EntityType>
+        <EntityType Name="INSTOCK">
+          <Key>
+            <PropertyRef Name="INSTOCK_ID" />
+          </Key>
+          <Property Name="INSTOCK_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FK_DRUG_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_DATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_PROOF_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_NUM" Type="Int32" Nullable="false" />
+          <Property Name="FK_SUPPLIER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_LOTBUY_PRICE" Type="Double" Nullable="false" />
+          <Property Name="FK_STAFF_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTOCK_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="STOCK" Relationship="Self.FK__INSTOCK__FK_DRUG__164452B1" FromRole="INSTOCK" ToRole="STOCK" />
+          <NavigationProperty Name="STAFF" Relationship="Self.FK__INSTOCK__FK_STAF__182C9B23" FromRole="INSTOCK" ToRole="STAFF" />
+          <NavigationProperty Name="SUPPLIER" Relationship="Self.FK__INSTOCK__FK_SUPP__173876EA" FromRole="INSTOCK" ToRole="SUPPLIER" />
+        </EntityType>
+        <EntityType Name="OUTSTOCK">
+          <Key>
+            <PropertyRef Name="OUTSTOCK_ID" />
+          </Key>
+          <Property Name="OUTSTOCK_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FK_DRUG_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OUTSTOCK_DATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OUTSTOCK_SELLPRICE" Type="Double" Nullable="false" />
+          <Property Name="FK_CLIENT_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FK_STAFF_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OUTSTOCK_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OUTSTOCK_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CLIENT" Relationship="Self.FK__OUTSTOCK__FK_CLI__1DE57479" FromRole="OUTSTOCK" ToRole="CLIENT" />
+          <NavigationProperty Name="STAFF" Relationship="Self.FK__OUTSTOCK__FK_STA__1ED998B2" FromRole="OUTSTOCK" ToRole="STAFF" />
+          <NavigationProperty Name="STOCK" Relationship="Self.FK__OUTSTOCK__OUTSTO__1CF15040" FromRole="OUTSTOCK" ToRole="STOCK" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="ROLES_ID" />
+          </Key>
+          <Property Name="ROLES_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ROLES_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ROLES_POWER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ROLES_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SELL">
+          <Key>
+            <PropertyRef Name="SELL_ID" />
+          </Key>
+          <Property Name="SELL_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SELL_PROOF_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_MOLECULES" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SELL_NUM" Type="Int32" Nullable="false" />
+          <Property Name="SELL_SINGLE_PRICE" Type="Double" Nullable="false" />
+          <Property Name="SELL_SUM_PRICE" Type="Double" Nullable="false" />
+          <Property Name="SELL_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SELL_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="STAFF_ID" />
+          </Key>
+          <Property Name="STAFF_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_IDCARDNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_ADRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_CONTACTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_POSITION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_POWER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STAFF_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="INSTOCK" Relationship="Self.FK__INSTOCK__FK_STAF__182C9B23" FromRole="STAFF" ToRole="INSTOCK" />
+          <NavigationProperty Name="OUTSTOCK" Relationship="Self.FK__OUTSTOCK__FK_STA__1ED998B2" FromRole="STAFF" ToRole="OUTSTOCK" />
+        </EntityType>
+        <EntityType Name="STOCK">
+          <Key>
+            <PropertyRef Name="DRUG_ID" />
+          </Key>
+          <Property Name="DRUG_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_DOSAGE" Type="Double" Nullable="false" />
+          <Property Name="DRUG_PROADRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_PACK_NUM" Type="Int32" Nullable="false" />
+          <Property Name="DRUG_STOCK_NUM" Type="Int32" Nullable="false" />
+          <Property Name="DRUG_MOLECULES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_EFFECTIVE_DATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_LOT_NUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_CATEGORY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_SELL_PRICE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_LOTSELL_PRICE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DRUG_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="INSTOCK" Relationship="Self.FK__INSTOCK__FK_DRUG__164452B1" FromRole="STOCK" ToRole="INSTOCK" />
+          <NavigationProperty Name="OUTSTOCK" Relationship="Self.FK__OUTSTOCK__OUTSTO__1CF15040" FromRole="STOCK" ToRole="OUTSTOCK" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPLIER_ADRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPLIER_CONTACTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPLIER_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPLIER_REMARKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPLIER_OTHERS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="INSTOCK" Relationship="Self.FK__INSTOCK__FK_SUPP__173876EA" FromRole="SUPPLIER" ToRole="INSTOCK" />
+        </EntityType>
+        <Association Name="FK__OUTSTOCK__FK_CLI__1DE57479">
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENT">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INSTOCK__FK_DRUG__164452B1">
+          <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STOCK">
+              <PropertyRef Name="DRUG_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_DRUG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INSTOCK__FK_STAF__182C9B23">
+          <End Role="STAFF" Type="Self.STAFF" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="STAFF_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INSTOCK__FK_SUPP__173876EA">
+          <End Role="SUPPLIER" Type="Self.SUPPLIER" Multiplicity="1" />
+          <End Role="INSTOCK" Type="Self.INSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIER">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Principal>
+            <Dependent Role="INSTOCK">
+              <PropertyRef Name="FK_SUPPLIER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OUTSTOCK__FK_STA__1ED998B2">
+          <End Role="STAFF" Type="Self.STAFF" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="STAFF_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_STAFF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OUTSTOCK__OUTSTO__1CF15040">
+          <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+          <End Role="OUTSTOCK" Type="Self.OUTSTOCK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STOCK">
+              <PropertyRef Name="DRUG_ID" />
+            </Principal>
+            <Dependent Role="OUTSTOCK">
+              <PropertyRef Name="FK_DRUG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="drugsroreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+          <EntitySet Name="INSTOCK" EntityType="Self.INSTOCK" />
+          <EntitySet Name="OUTSTOCK" EntityType="Self.OUTSTOCK" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" />
+          <EntitySet Name="SELL" EntityType="Self.SELL" />
+          <EntitySet Name="STAFF" EntityType="Self.STAFF" />
+          <EntitySet Name="STOCK" EntityType="Self.STOCK" />
+          <EntitySet Name="SUPPLIER" EntityType="Self.SUPPLIER" />
+          <AssociationSet Name="FK__OUTSTOCK__FK_CLI__1DE57479" Association="Self.FK__OUTSTOCK__FK_CLI__1DE57479">
+            <End Role="CLIENT" EntitySet="CLIENT" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INSTOCK__FK_DRUG__164452B1" Association="Self.FK__INSTOCK__FK_DRUG__164452B1">
+            <End Role="STOCK" EntitySet="STOCK" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INSTOCK__FK_STAF__182C9B23" Association="Self.FK__INSTOCK__FK_STAF__182C9B23">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INSTOCK__FK_SUPP__173876EA" Association="Self.FK__INSTOCK__FK_SUPP__173876EA">
+            <End Role="SUPPLIER" EntitySet="SUPPLIER" />
+            <End Role="INSTOCK" EntitySet="INSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OUTSTOCK__FK_STA__1ED998B2" Association="Self.FK__OUTSTOCK__FK_STA__1ED998B2">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OUTSTOCK__OUTSTO__1CF15040" Association="Self.FK__OUTSTOCK__OUTSTO__1CF15040">
+            <End Role="STOCK" EntitySet="STOCK" />
+            <End Role="OUTSTOCK" EntitySet="OUTSTOCK" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="drugsroreModelStoreContainer" CdmEntityContainer="drugsroreEntities">
+          <EntitySetMapping Name="CLIENT">
+            <EntityTypeMapping TypeName="drugsroreModel.CLIENT">
+              <MappingFragment StoreEntitySet="CLIENT">
+                <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+                <ScalarProperty Name="CLIENT_ADRESS" ColumnName="CLIENT_ADRESS" />
+                <ScalarProperty Name="CLIENT_CONTACTER" ColumnName="CLIENT_CONTACTER" />
+                <ScalarProperty Name="CLIENT_TEL" ColumnName="CLIENT_TEL" />
+                <ScalarProperty Name="CLIENT_REMARKS" ColumnName="CLIENT_REMARKS" />
+                <ScalarProperty Name="CLIENT_OTHERS" ColumnName="CLIENT_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INSTOCK">
+            <EntityTypeMapping TypeName="drugsroreModel.INSTOCK">
+              <MappingFragment StoreEntitySet="INSTOCK">
+                <ScalarProperty Name="INSTOCK_ID" ColumnName="INSTOCK_ID" />
+                <ScalarProperty Name="FK_DRUG_ID" ColumnName="FK_DRUG_ID" />
+                <ScalarProperty Name="INSTOCK_DATE" ColumnName="INSTOCK_DATE" />
+                <ScalarProperty Name="INSTOCK_PROOF_ID" ColumnName="INSTOCK_PROOF_ID" />
+                <ScalarProperty Name="INSTOCK_NUM" ColumnName="INSTOCK_NUM" />
+                <ScalarProperty Name="FK_SUPPLIER_ID" ColumnName="FK_SUPPLIER_ID" />
+                <ScalarProperty Name="INSTOCK_LOTBUY_PRICE" ColumnName="INSTOCK_LOTBUY_PRICE" />
+                <ScalarProperty Name="FK_STAFF_ID" ColumnName="FK_STAFF_ID" />
+                <ScalarProperty Name="INSTOCK_REMARKS" ColumnName="INSTOCK_REMARKS" />
+                <ScalarProperty Name="INSTOCK_OTHERS" ColumnName="INSTOCK_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OUTSTOCK">
+            <EntityTypeMapping TypeName="drugsroreModel.OUTSTOCK">
+              <MappingFragment StoreEntitySet="OUTSTOCK">
+                <ScalarProperty Name="OUTSTOCK_ID" ColumnName="OUTSTOCK_ID" />
+                <ScalarProperty Name="FK_DRUG_ID" ColumnName="FK_DRUG_ID" />
+                <ScalarProperty Name="OUTSTOCK_DATE" ColumnName="OUTSTOCK_DATE" />
+                <ScalarProperty Name="OUTSTOCK_SELLPRICE" ColumnName="OUTSTOCK_SELLPRICE" />
+                <ScalarProperty Name="FK_CLIENT_ID" ColumnName="FK_CLIENT_ID" />
+                <ScalarProperty Name="FK_STAFF_ID" ColumnName="FK_STAFF_ID" />
+                <ScalarProperty Name="OUTSTOCK_REMARKS" ColumnName="OUTSTOCK_REMARKS" />
+                <ScalarProperty Name="OUTSTOCK_OTHERS" ColumnName="OUTSTOCK_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLES">
+            <EntityTypeMapping TypeName="drugsroreModel.ROLES">
+              <MappingFragment StoreEntitySet="ROLES">
+                <ScalarProperty Name="ROLES_ID" ColumnName="ROLES_ID" />
+                <ScalarProperty Name="ROLES_NAME" ColumnName="ROLES_NAME" />
+                <ScalarProperty Name="ROLES_POWER" ColumnName="ROLES_POWER" />
+                <ScalarProperty Name="ROLES_OTHERS" ColumnName="ROLES_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SELL">
+            <EntityTypeMapping TypeName="drugsroreModel.SELL">
+              <MappingFragment StoreEntitySet="SELL">
+                <ScalarProperty Name="SELL_ID" ColumnName="SELL_ID" />
+                <ScalarProperty Name="SELL_PROOF_ID" ColumnName="SELL_PROOF_ID" />
+                <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+                <ScalarProperty Name="DRUG_MOLECULES" ColumnName="DRUG_MOLECULES" />
+                <ScalarProperty Name="SELL_NUM" ColumnName="SELL_NUM" />
+                <ScalarProperty Name="SELL_SINGLE_PRICE" ColumnName="SELL_SINGLE_PRICE" />
+                <ScalarProperty Name="SELL_SUM_PRICE" ColumnName="SELL_SUM_PRICE" />
+                <ScalarProperty Name="SELL_REMARKS" ColumnName="SELL_REMARKS" />
+                <ScalarProperty Name="SELL_OTHERS" ColumnName="SELL_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFF">
+            <EntityTypeMapping TypeName="drugsroreModel.STAFF">
+              <MappingFragment StoreEntitySet="STAFF">
+                <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+                <ScalarProperty Name="STAFF_NAME" ColumnName="STAFF_NAME" />
+                <ScalarProperty Name="STAFF_USERNAME" ColumnName="STAFF_USERNAME" />
+                <ScalarProperty Name="STAFF_PASSWORD" ColumnName="STAFF_PASSWORD" />
+                <ScalarProperty Name="STAFF_IDCARDNUM" ColumnName="STAFF_IDCARDNUM" />
+                <ScalarProperty Name="STAFF_ADRESS" ColumnName="STAFF_ADRESS" />
+                <ScalarProperty Name="STAFF_CONTACTER" ColumnName="STAFF_CONTACTER" />
+                <ScalarProperty Name="STAFF_POSITION" ColumnName="STAFF_POSITION" />
+                <ScalarProperty Name="STAFF_POWER" ColumnName="STAFF_POWER" />
+                <ScalarProperty Name="STAFF_REMARKS" ColumnName="STAFF_REMARKS" />
+                <ScalarProperty Name="STAFF_OTHERS" ColumnName="STAFF_OTHERS" />
+                <ScalarProperty Name="STAFF_TEL" ColumnName="STAFF_TEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STOCK">
+            <EntityTypeMapping TypeName="drugsroreModel.STOCK">
+              <MappingFragment StoreEntitySet="STOCK">
+                <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+                <ScalarProperty Name="DRUG_NAME" ColumnName="DRUG_NAME" />
+                <ScalarProperty Name="DRUG_DOSAGE" ColumnName="DRUG_DOSAGE" />
+                <ScalarProperty Name="DRUG_PROADRESS" ColumnName="DRUG_PROADRESS" />
+                <ScalarProperty Name="DRUG_PACK_NUM" ColumnName="DRUG_PACK_NUM" />
+                <ScalarProperty Name="DRUG_STOCK_NUM" ColumnName="DRUG_STOCK_NUM" />
+                <ScalarProperty Name="DRUG_MOLECULES" ColumnName="DRUG_MOLECULES" />
+                <ScalarProperty Name="DRUG_EFFECTIVE_DATE" ColumnName="DRUG_EFFECTIVE_DATE" />
+                <ScalarProperty Name="DRUG_LOT_NUM" ColumnName="DRUG_LOT_NUM" />
+                <ScalarProperty Name="DRUG_CATEGORY" ColumnName="DRUG_CATEGORY" />
+                <ScalarProperty Name="DRUG_SELL_PRICE" ColumnName="DRUG_SELL_PRICE" />
+                <ScalarProperty Name="DRUG_LOTSELL_PRICE" ColumnName="DRUG_LOTSELL_PRICE" />
+                <ScalarProperty Name="DRUG_REMARKS" ColumnName="DRUG_REMARKS" />
+                <ScalarProperty Name="DRUG_OTHERS" ColumnName="DRUG_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUPPLIER">
+            <EntityTypeMapping TypeName="drugsroreModel.SUPPLIER">
+              <MappingFragment StoreEntitySet="SUPPLIER">
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+                <ScalarProperty Name="SUPPLIER_ADRESS" ColumnName="SUPPLIER_ADRESS" />
+                <ScalarProperty Name="SUPPLIER_CONTACTER" ColumnName="SUPPLIER_CONTACTER" />
+                <ScalarProperty Name="SUPPLIER_TEL" ColumnName="SUPPLIER_TEL" />
+                <ScalarProperty Name="SUPPLIER_REMARKS" ColumnName="SUPPLIER_REMARKS" />
+                <ScalarProperty Name="SUPPLIER_OTHERS" ColumnName="SUPPLIER_OTHERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
